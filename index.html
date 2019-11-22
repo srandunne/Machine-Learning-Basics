@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>brain.js</title>
+	<script src="https://cdn.rawgit.com/BrainJS/brain.js/45ce6ffc/browser.js">
+	</script>
+	<script src="drawing.js">
+	</script>
+</head>
+
+<body>
+	<table align="center" cellspacing="0" cellpadding="1" border="0">
+		<caption>
+			<h3>Step 1: Prepare data</h3>
+			<p>Draw 3 positive and 3 negative images</p>
+		</caption>
+		<tr>
+			<th>Positive</th>
+			<td>
+				<canvas id="p1" width="200" height="200" style="border: 1px solid black; cursor: default; display: block;"></canvas>
+			</td>
+			<td>
+				<canvas id="p2" width="200" height="200" style="border: 1px solid black; cursor: default; display: block;"></canvas>
+			</td>
+			<td>
+				<canvas id="p3" width="200" height="200" style="border: 1px solid black; cursor: default; display: block;"></canvas>
+			</td>
+		</tr>
+		<tr>
+			<th>Negative</th>
+			<td>
+				<canvas id="n1" width="200" height="200" style="border: 1px solid black; cursor: default; display: block;"></canvas>
+			</td>
+			<td>
+				<canvas id="n2" width="200" height="200" style="border: 1px solid black; cursor: default; display: block;"></canvas>
+			</td>
+			<td>
+				<canvas id="n3" width="200" height="200" style="border: 1px solid black; cursor: default; display: block;"></canvas>
+			</td>
+		</tr>
+	</table>
+
+	<table width="100%" align="center">
+		<caption>
+			<h3>Step 2: Train Model</h3>
+			<button id="train">Train</button>
+            <label><input type="checkbox" id="dbg"/> debug</label>
+        </caption>
+        <tr>
+            <td align="center">
+                <table>
+                    <tbody id="res" style="display: none">
+                        <tr>
+                            <th>Error</th>
+                            <td id="err"></td>
+                        </tr>
+                        <tr>
+                            <th>Iterations</th>
+                            <td id="iterations"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table align="center">
+        <caption>
+            <h3>Step 3: Evaluate Model</h3>
+            <button id="guess">Guess</button>
+        </caption>
+        <tr>
+            <td align="center">
+                <canvas id="g" width="200" height="200" style="border: 1px solid black; cursor: default; display: block;"></canvas>
+            </td>
+        </tr>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
